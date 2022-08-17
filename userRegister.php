@@ -60,6 +60,11 @@
 
 <?php 
 
+    $fName = filter_input(INPUT_POST, 'fName');
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password');
+    $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
+
 
     function validation($fName, $email, $password,$confirmPassword){
         if($fName =="" || $email =="" || $password =="" || $confirmPassword ==""){
@@ -73,10 +78,7 @@
 
     };
 
-    $fName = filter_input(INPUT_POST, 'fName');
-    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    $password = filter_input(INPUT_POST, 'password');
-    $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
+
 
 
     
