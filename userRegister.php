@@ -69,7 +69,7 @@
             $confirmPassword= "Please re-enter your password!";
 
 
-        }
+        };
 
     };
 
