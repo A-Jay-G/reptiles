@@ -1,0 +1,51 @@
+.container{
+
+    color: white;
+    width: 375px;
+    height: 812px;
+    margin:auto;
+    background-color: #313131;
+    outline: solid 1px black;
+    text-align: center;
+
+
+}
+
+.label{
+
+    font-size: 24px;
+    margin-left:25px;
+    text-align: left;
+    
+
+}
+
+input{
+
+    width:340px;
+    height:40px;
+    
+}
+
+input[type=submit]{
+
+    margin-top: 20px;
+    width:200px;
+    height:45px;
+}
+
+.header{
+
+    width:375px;
+    height:100px;
+    outline: solid 1px black;
+    background-color: #7C0A02;
+}
+
+.info{
+    margin-top: 50px;
+}
+
+h4{
+    font-size: 36px;
+}
