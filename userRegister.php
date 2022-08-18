@@ -1,19 +1,5 @@
 
-<?php
-        
-        include __DIR__ . '/model/model_patients.php';
-        
-       if (isPostRequest()) {
-           $fName = filter_input(INPUT_POST, 'fName');
-           $lName = filter_input(INPUT_POST, 'lName');
-           $userName = filter_input(INPUT_POST, 'userName');
-           $email = filter_input(INPUT_POST, 'email');
-           $password = filter_input(INPUT_POST, 'password');
 
-           $result = addUser ($fname, $lname,$userName,$email,$password,$date);
-           
-       }
-    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,10 +63,18 @@
 
 <?php 
 
+  //  $fName = filter_input(INPUT_POST, 'fName');
+   // $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    //$password = filter_input(INPUT_POST, 'password');
+    //$confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
+
     $fName = filter_input(INPUT_POST, 'fName');
-    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $lName = filter_input(INPUT_POST, 'lName');
+    $userName = filter_input(INPUT_POST, 'userName');
+    $email = filter_input(INPUT_POST, 'email');
     $password = filter_input(INPUT_POST, 'password');
-    $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
+
+    $result = addUser ($fname, $lname,$userName,$email,$password,$date);
 
 
     function validation($fName, $email, $password,$confirmPassword){
