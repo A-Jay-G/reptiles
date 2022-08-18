@@ -1,3 +1,20 @@
+
+<?php
+        
+        include __DIR__ . '/model/model_patients.php';
+        include __DIR__ . '/functions.php';
+       if (isPostRequest()) {
+           $fName = filter_input(INPUT_POST, 'fName');
+           $lName = filter_input(INPUT_POST, 'lName');
+           $userName = filter_input(INPUT_POST, 'userName');
+           $email = filter_input(INPUT_POST, 'email');
+           $password = filter_input(INPUT_POST, 'password');
+
+           $result = addUser ($fname, $lname,$userName,$email,$password,$date);
+           
+       }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,18 +94,6 @@
         };
 
     };
-
-
-
-
-    
-
-
-
-    
-
-  
-
 
 
     if(isset($_POST['final'])){
