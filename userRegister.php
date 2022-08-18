@@ -2,7 +2,7 @@
 <?php
         
         include __DIR__ . '/model/model_patients.php';
-        include __DIR__ . '/functions.php';
+        
        if (isPostRequest()) {
            $fName = filter_input(INPUT_POST, 'fName');
            $lName = filter_input(INPUT_POST, 'lName');
