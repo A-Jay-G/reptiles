@@ -3,12 +3,12 @@
     include (__DIR__ . '/db.php');
     
     
-    function getPatients () {
+    function getUsers () {
         global $db;
         
         $results = [];
 
-        $stmt = $db->prepare("SELECT id, patientFirstname, patientLastname, patientMarried, patientBirthDate FROM patients ORDER BY patientFirstname"); 
+        $stmt = $db->prepare("SELECT userID, fName, lName, userName, email, salt,date,isAdmin FROM usertable ORDER BY userName"); 
         
         if ( $stmt->execute() && $stmt->rowCount() > 0 ) {
              $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -18,7 +18,7 @@
          return ($results);
     }
 
-    function getPatient ($id) {
+    function getUser ($id) {
         global $db;
         
         $results = [];
@@ -56,7 +56,7 @@
         
         
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
-            $results = 'Patient Added';
+            $results = 'User Created';
         }
         
         return ($results);

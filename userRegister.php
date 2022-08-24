@@ -23,28 +23,28 @@
     <label>First Name:</label>
     </div>
     <div>
-    <input type="text" name="fName" value="<?php $fName;?>" ><br>
+    <input type="text" name="fName" value="fname" ><br>
     </div>
 <br>
     <div class="label">
     <label>Email Address:</label>
     </div>
     <div>
-    <input type="text" name="email" value="<?php $email;?>" >
+    <input type="text" name="email" value="email" >
     </div>
 <br>
     <div class="label">
     <label>Password:</label>
     </div>
     <div>
-    <input type="text" name="password" value="<?php $password;?>" >
+    <input type="text" name="password" value="password" >
     </div>
 <br>
 <div class="label">
     <label>Confirm Password:</label>
     </div>
     <div>
-    <input type="text" name="confirmPassword" value="<?php $confirmPassword;?>" >
+    <input type="text" name="confirmPassword" value="confirmPassword" >
     </div>
 <br>
 </div>
@@ -62,6 +62,8 @@
 </html>
 
 <?php 
+include __DIR__ . '/model/model_users.php';
+
 
   //  $fName = filter_input(INPUT_POST, 'fName');
    // $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -91,13 +93,25 @@
 
 
     if(isset($_POST['final'])){
+        
+        $fName = filter_input(INPUT_POST, 'fName');
+        $lName = filter_input(INPUT_POST, 'lName');
+        $userName = filter_input(INPUT_POST, 'userName');
+        $email = filter_input(INPUT_POST, 'email');
+        $password = filter_input(INPUT_POST, 'password');
+    
+        $result = addUser ($fname, $lname,$userName,$email,$password,$date);
        echo "Submitted <hr />";
        echo $fName;
        echo "<hr />";
+       echo $lName;
+       echo "<hr />";
        echo $email;
        echo "<hr />";
-       echo $password;              
+       echo $password;                  
        echo "<hr />";
-       echo $confirmPassword;
+       echo $userName;              
+       
+      
         
     };
