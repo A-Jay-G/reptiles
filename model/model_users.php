@@ -42,7 +42,7 @@
         global $db;
         $results = "Not added";
 
-        $stmt = $db->prepare("INSERT INTO userstable SET fName = :fName, lName = :lName, userName= :userName, email= :email, password = :salt, date= :date");
+        $stmt = $db->prepare("INSERT INTO userstable SET fName = :fName, lName = :lName, userName= :userName, email= :email, salt = :password, date= :date");
 
         $binds = array(
 
@@ -50,7 +50,7 @@
             ":lName" => $ln,
             ":userName"=>$usr,
             ":email"=>$ema,
-            ":salt"=>$slt,
+            ":password"=>$slt,
             ":date"=>$dte
         );
         
