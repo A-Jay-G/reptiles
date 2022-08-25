@@ -1,4 +1,19 @@
+<?php
+        
+        include __DIR__ . '/model/model_users.php';
+        include __DIR__ . '/functions.php';
 
+        if(isset($_POST['final'])){
+        $fName = filter_input(INPUT_POST, 'fName');
+        $lName = filter_input(INPUT_POST, 'lName');
+        $userName = filter_input(INPUT_POST, 'userName');
+        $email = filter_input(INPUT_POST, 'email');
+        $password = filter_input(INPUT_POST, 'password');
+
+        $result = addUser ($fName, $lName,$userName,$email,$password,$date);
+           
+       }
+    ?>
 
 
 
@@ -53,22 +68,7 @@
 
 </form>
 <p>Already have an account? <a href='userLogin.php'>Login Here</a></p>
-<?php
-        
-        include __DIR__ . '/model/model_users.php';
-        include __DIR__ . '/functions.php';
 
-        if(isset($_POST['final'])){
-        $fName = filter_input(INPUT_POST, 'fName');
-        $lName = filter_input(INPUT_POST, 'lName');
-        $userName = filter_input(INPUT_POST, 'userName');
-        $email = filter_input(INPUT_POST, 'email');
-        $password = filter_input(INPUT_POST, 'password');
-
-        $result = addUser ($fName, $lName,$userName,$email,$password,$date);
-           
-       }
-    ?>
 
 
 </form>
