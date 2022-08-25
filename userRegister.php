@@ -11,7 +11,7 @@
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
 
-        $result = addUser ($fname, $lname,$userName,$email,$password,$date);
+        $result = addUser ($fName, $lName,$userName,$email,$password,$date);
            
        }
     ?>
