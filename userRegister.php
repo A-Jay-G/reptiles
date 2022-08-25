@@ -16,7 +16,7 @@
        }
     ?>
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -63,7 +63,7 @@
     </div>
 <br>
 </div>
-<form id="print" method="POST" action="userLogin.php">
+<form id="print" method="POST" action="userRegister.php">
     <input type="submit" name="final" value="Register"/>
 
 </form>
