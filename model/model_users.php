@@ -8,7 +8,7 @@
         
         $results = [];
 
-        $stmt = $db->prepare("SELECT userID, fName, lName, userName, email, salt,date,isAdmin FROM usertable ORDER BY userName"); 
+        $stmt = $db->prepare("SELECT userID, fName, lName, userName, email, salt,date,isAdmin FROM userstable ORDER BY userName"); 
         
         if ( $stmt->execute() && $stmt->rowCount() > 0 ) {
              $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -23,8 +23,8 @@
         
         $results = [];
 
-        $stmt = $db->prepare("SELECT patientFirstname, patientLastname, patientMarried, patientBirthDate FROM patients WHERE id=:id"); 
-        $stmt->bindValue('id',$id);
+        $stmt = $db->prepare("SELECT  fName, lName, userName, email, salt, date, isAdmin FROM userstable WHERE userID=:userID"); 
+        $stmt->bindValue('userID',$id);
         if ( $stmt->execute() && $stmt->rowCount() > 0 ) {
              $results = $stmt->fetch(PDO::FETCH_ASSOC);
                  
@@ -42,7 +42,7 @@
         global $db;
         $results = "Not added";
 
-        $stmt = $db->prepare("INSERT INTO userstable SET fName = :fName, lName = :lName, userName= :userName, email= :email, salt= :salt, date= :date");
+        $stmt = $db->prepare("INSERT INTO userstable SET fName = :fName, lName = :lName, userName= :userName, email= :email, password = :salt, date= :date");
 
         $binds = array(
 

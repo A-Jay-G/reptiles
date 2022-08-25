@@ -1,5 +1,20 @@
 
+<?php
+        
+        include __DIR__ . '/model/model_teams.php';
+        include __DIR__ . '/functions.php';
+        
+       if (isPostRequest()) {
+        $fName = filter_input(INPUT_POST, 'fName');
+        $lName = filter_input(INPUT_POST, 'lName');
+        $userName = filter_input(INPUT_POST, 'userName');
+        $email = filter_input(INPUT_POST, 'email');
+        $password = filter_input(INPUT_POST, 'password');
 
+        $result = addUser ($fname, $lname,$userName,$email,$password,$date);
+           
+       }
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +65,7 @@
 </div>
 <form id="print" method="POST" action="userLogin.php">
     <input type="submit" name="final" value="Register"/>
+
 </form>
 <p>Already have an account? <a href='userLogin.php'>Login Here</a></p>
 
@@ -61,58 +77,3 @@
 </body>
 </html>
 
-<?php 
-include __DIR__ . '/model/model_users.php';
-
-
-  //  $fName = filter_input(INPUT_POST, 'fName');
-   // $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    //$password = filter_input(INPUT_POST, 'password');
-    //$confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
-
-    $fName = filter_input(INPUT_POST, 'fName');
-    $lName = filter_input(INPUT_POST, 'lName');
-    $userName = filter_input(INPUT_POST, 'userName');
-    $email = filter_input(INPUT_POST, 'email');
-    $password = filter_input(INPUT_POST, 'password');
-
-    $result = addUser ($fname, $lname,$userName,$email,$password,$date);
-
-
-    function validation($fName, $email, $password,$confirmPassword){
-        if($fName =="" || $email =="" || $password =="" || $confirmPassword ==""){
-            $fName= "Please enter a first name!";
-            $email= "Invalid Email Address!";
-            $password= "Please enter a password!";
-            $confirmPassword= "Please re-enter your password!";
-
-
-        };
-
-    };
-
-
-    if(isset($_POST['final'])){
-
-        $fName = filter_input(INPUT_POST, 'fName');
-        $lName = filter_input(INPUT_POST, 'lName');
-        $userName = filter_input(INPUT_POST, 'userName');
-        $email = filter_input(INPUT_POST, 'email');
-        $password = filter_input(INPUT_POST, 'password');
-    
-       
-        $result = addUser ($fname, $lname,$userName,$email,$password,$date);
-       echo "Submitted <hr />";
-       echo $fName;
-       echo "<hr />";
-       echo $lName;
-       echo "<hr />";
-       echo $email;
-       echo "<hr />";
-       echo $password;                  
-       echo "<hr />";
-       echo $userName;              
-       
-      
-        
-    };
